@@ -89,17 +89,52 @@
 
         document.write(multiArray[1][3] + "<br />");
 
-        for (var i = 0; i < multiArray.length; i++)
-        {
-            for (var j = 0; j < multiArray[i].length; j++)
-            {
+        for (var i = 0; i < multiArray.length; i++) {
+            for (var j = 0; j < multiArray[i].length; j++) {
                 document.write(multiArray[i][j] + "<br />");
             }
         }
+    </script>
+
+    <p> **************************** </p>
+
+    <script>
+        // functions
+
+        function addThese(num1, num2)
+        {
+            return num1 + num2;
+        }
+        document.write("1 + 2 = " + addThese(1, 2) + "<br />");
+        document.write("<br />");
+    </script>
+
+    <script>
+        function addMany(a, b, c, d, e, f)
+        {
+            var i = 1;
+            var sum = 1;
+            document.write("Arguments Length: " + arguments.length + "<br/>");
+
+            while (i < arguments.length)
+            {
+                sum = sum + arguments[i];     // Arguments is technically an Object
+                i++;
+            }
+            document.write("Sum of arguments: " + sum + "<br/>");
+        }
+
+        addMany(1, 1, 1, 1, 1, 2);
+
+        addMany(1, 1, 1, 1, 1);
+
+        addMany(1, 1, 1, 1, 1, 1, 1, 1);
 
 
 
     </script>
+
+
 
 </body>
 </html>
