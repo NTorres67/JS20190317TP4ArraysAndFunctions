@@ -126,9 +126,53 @@
 
         addMany(1, 1, 1, 1, 1, 2);
 
-        addMany(1, 1, 1, 1, 1);
+        addMany(1, 1, 1, 1, 1);           // will work even if sending less arguments then expected
 
-        addMany(1, 1, 1, 1, 1, 1, 1, 1);
+        addMany(1, 1, 1, 1, 1, 1, 1, 1);  // will work even if sending more agurments then expected
+    </script>
+
+    <p> **************************** </p>
+
+    <script>
+        // *** Scope/Block Scope
+            // JS does not have block level scope
+            // Global variables accessible anywhere inside the program
+            // all varibles defined inside of JA are considered defined BEFORE they are given a value
+
+        var scopeTest = 1;
+
+        function scopey() {
+            document.write("In Scopey 1st: " + scopeTest + "<br/>");  // if no line 149&150 will print 1 as it is defined here
+            var scopeTest = 2;                                        // change scope
+            document.write("In Scopey 2nd: " + scopeTest + "<br/>");  // if no line 149&150 will print 2
+        }
+        scopey();
+        document.write("Out of Scopey: " + scopeTest + "<br />");     // print 1 = global value of scope test
+
+        document.write("<br />");
+
+        // to correct
+            // 1: define variable at the beginning
+            // 2: use different names inside of functions then used on global basis
+            // 3: define fuctions directly inside of another function
+
+        var scopeTest = 1;
+
+        function scopey() {
+
+            function s() { document.write("In S(): " + scopeTest + "<br />"); }
+            s();
+
+            var scopeTest = 2;                                        // 1
+            document.write("In Scopey 1st: " + scopeTest + "<br/>");  // 
+             
+            document.write("In Scopey 2nd: " + scopeTest + "<br/>");  // 
+        }
+        scopey();
+        document.write("Out of Scopey: " + scopeTest + "<br />");     // 
+
+
+
 
 
 
