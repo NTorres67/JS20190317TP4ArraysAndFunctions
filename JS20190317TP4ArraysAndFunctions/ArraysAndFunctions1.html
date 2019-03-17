@@ -1,10 +1,73 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8" />
-    <title></title>
+
+    <title>JS20190317TP4 - Arrays and Functions</title>
+
 </head>
+
 <body>
+
+    <!-- When it comes to arrays and functions, JS acts differently from other languages -->
+
+    <!-- Arrays begin with index [0] -->
+
+    <!-- Any data can go inside of an array -->
+
+    <!--  -->
+
+
+
+    <script>
+
+       // var sampArray10 = new Array(10);      ***** Array with 10 spaces ***
+
+        var sampArray = new Array();
+        sampArray[0] = "Emma";
+        sampArray[1] = "111 Canterbury";
+        sampArray[2] = 52;
+
+        for (i in sampArray)
+        {
+            document.write(sampArray[i] + "<br />");
+        }
+
+        document.write(sampArray.length + "<br />");
+
+        // different ways to create arrays
+
+        var sampArray2 = new Array("Emma", "111 Canterbury", 52);
+        var sampArray3 = ["Emma", "111 Canterbury", 52];  // JS automatically knows an array is being created
+
+        // join 2 arrays
+
+        sampArray4 = sampArray.concat(sampArray2);
+
+        for (i in sampArray4) {
+            document.write(sampArray4[i] + "<br />");
+        }        
+    </script>
+
+    <p> **************************** </p>
+
+    <script>
+        var sampArray = new Array();
+        sampArray[0] = "Emma";
+        sampArray[1] = "111 Canterbury";
+        sampArray[2] = 52;
+
+        // join 2 arrays and turn it into a string
+
+        document.write("Array String: " + sampArray.join(" ") + "<br />");
+        document.write("Array Slice: " + sampArray.slice(0,2) + "<br />");
+        document.write("Array Reversed: " + sampArray.reverse() + "<br />");
+
+
+
+
+    </script>
 
 </body>
 </html>
