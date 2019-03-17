@@ -149,33 +149,27 @@
         scopey();
         document.write("Out of Scopey: " + scopeTest + "<br />");     // print 1 = global value of scope test
 
-        document.write("<br />");
+        document.write("************* <br />");
 
         // to correct
             // 1: define variable at the beginning
             // 2: use different names inside of functions then used on global basis
             // 3: define fuctions directly inside of another function
 
-        var scopeTest = 1;
+        var scopeTestX = 3;
 
-        function scopey() {
+        function scopeyX() {
 
-            function s() { document.write("In S(): " + scopeTest + "<br />"); }
-            s();
+            function sX() { document.write("In SX(): " + scopeTestX + "<br />"); }   // 3
+            sX();
 
-            var scopeTest = 2;                                        // 1
-            document.write("In Scopey 1st: " + scopeTest + "<br/>");  // 
+            var scopeTestX = 4;                                        // 1
+            document.write("In ScopeyX 1st: " + scopeTestX + "<br/>");   
              
-            document.write("In Scopey 2nd: " + scopeTest + "<br/>");  // 
+            document.write("In ScopeyX 2nd: " + scopeTestX + "<br/>");   
         }
-        scopey();
-        document.write("Out of Scopey: " + scopeTest + "<br />");     // 
-
-
-
-
-
-
+        scopeyX();
+        document.write("Out of ScopeyX: " + scopeTestX + "<br />");      
     </script>
 
 
